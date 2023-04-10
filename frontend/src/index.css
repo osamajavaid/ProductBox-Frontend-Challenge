@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* giving calculted width to the screen */
+.layout-screen{
+  /* 49px is width of side navbar */
+  width: calc(100% - 250px);
+  
+}
