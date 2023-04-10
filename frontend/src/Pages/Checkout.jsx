@@ -13,13 +13,19 @@ const Checkout = () => {
             setCart(items)
         }
     }, [])
-    // console.log(cart)
+    console.log(cart)
     return (
         <Layout currentPage="Checkout Page">
-            <div className="flex flex-wrap gap-6 items-center justify-center my-10">
-                {cart.map((data, key) => <CheckoutCard key={key} data={data} />
-                )}
-            </div>
+            {!cart.length == 0 ?
+                <div className="flex flex-wrap gap-6 items-center justify-center my-10">
+                    {cart.map((data, key) => <CheckoutCard key={key} data={data} />
+                    )}
+                </div>
+                :
+                <div className="flex flex-wrap gap-6 items-center justify-center my-10 text-6xl text-black">
+                    <h1> your cart is empty!</h1>
+                </div>
+            }
         </Layout>
     )
 }

@@ -3,11 +3,13 @@ import Layout from '../Layout/Layout'
 import { Field, Form, Formik } from 'formik';
 import axios from 'axios';
 
+
 const Add_Items = () => {
 
     return (
         <Layout currentPage="Add Items Page">
-            <div className="flex items-center justify-center mt-10">
+            <h1 className='text-2xl font-bold text-center mt-10'>Add item for sale</h1>
+            <div className="flex items-center justify-center mt-2">
 
                 <Formik
                     initialValues={{
@@ -37,9 +39,9 @@ const Add_Items = () => {
 
                     (<Form className='flex flex-col gap-6 w-1/2 bg-gray-600 p-4 rounded-2xl'>
                         <div className='flex flex-row items-center'>
-                            <label className="w-[25%] mb-2 text-sm text-gray-300" htmlFor="main_picture">Image</label>
+                            <label className="w-[25%] mb-2 text-sm text-gray-300" htmlFor="main_picture">Image URL</label>
                             <div className='flex flex-col w-3/4'>
-                                <Field id="img" type="url" name='img' className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
+                                <Field placeholder="Enter image url" id="img" type="url" name='img' className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
 
                             </div>
                         </div>
@@ -47,7 +49,7 @@ const Add_Items = () => {
                         <div className='flex flex-row items-center'>
                             <label htmlFor="name" className="w-[25%] mb-2 text-sm text-gray-900 dark:text-gray-300">Name</label>
                             <div className='flex flex-col w-3/4 '>
-                                <Field type="text" name='name' id="name" className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
+                                <Field placeholder="Enter item name" type="text" name='name' id="name" className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
 
                             </div>
                         </div>
@@ -55,7 +57,7 @@ const Add_Items = () => {
                         <div className='flex flex-row items-center'>
                             <label htmlFor="price" className="w-[25%] mb-2 text-sm text-gray-900 dark:text-gray-300">Price</label>
                             <div className='w-3/4 flex flex-col'>
-                                <Field type="number" name='price' id="price" className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
+                                <Field placeholder="Enter item price" min='1' type="number" name='price' id="price" className="p-2 w-[100%] rounded-md border sm:text-xs bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
                             </div>
                         </div>
 
