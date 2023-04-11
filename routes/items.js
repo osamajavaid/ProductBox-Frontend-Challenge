@@ -12,7 +12,6 @@ router.get('/', function (req, res) {
 });
 
 /* Create a new item */
-/* Create a new item */
 router.post('/', function (req, res) {
     var item = req.body;
     curId += 1;
@@ -25,7 +24,7 @@ router.post('/', function (req, res) {
 router.get('/:id', function (req, res, next) {
     var item = items[req.params.id];
     if (!item) {
-        return next();
+        return next(new Error('item not found'));
     }
     res.json(items[req.params.id]);
 });
@@ -33,6 +32,9 @@ router.get('/:id', function (req, res, next) {
 /* Delete a item by id */
 router.delete('/:id', function (req, res) {
     var item = items[req.params.id];
+    if (!item) {
+        return next(new Error('item not found'));
+    }
     delete items[req.params.id];
     res.status(204);
     log.info('Deleted item', item);

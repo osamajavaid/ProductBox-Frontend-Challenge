@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
 import { Field, Form, Formik } from 'formik';
 import axios from 'axios';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Update_Items = () => {
     const [data, setData] = useState({});
@@ -30,7 +30,6 @@ const Update_Items = () => {
                         name: data.name || "",
                         price: data.price || ""
                     }}
-                    // validationSchema={headerSchema}
                     onSubmit={(values, { resetForm }) => {
                         console.log(values)
                         const obj = {
@@ -83,28 +82,10 @@ const Update_Items = () => {
 
                         <div className='flex flex-row justify-end gap-4'>
                             <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new item</button>
-
-                            {/* <button className={`animateSpin`} disabled={!selectedRecord?.id} variant='contained' type='submit'>Submit</button> */}
                         </div>
                     </Form>)}
 
                 </Formik>
-                {/* <form className='w-1/2 bg-gray-600 rounded-2xl p-4'>
-                    <div className="mb-6">
-                        <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name:</label>
-                        <input type="email" id="name" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required />
-                    </div>
-                    <div className="mb-6">
-                        <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                        <input type="text" id="price" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
-                    </div>
-                    <div className="mb-6">
-                        <label for="repeat-password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image Url</label>
-                        <input type="file" id="img" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required />
-                    </div>
-                    <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new item</button>
-                </form> */}
-
             </div>
         </Layout >
     )
