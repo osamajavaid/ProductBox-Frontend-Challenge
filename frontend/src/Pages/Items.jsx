@@ -14,7 +14,6 @@ const Items = () => {
                 console.log(error);
             });
     }, [])
-    console.log(isData)
 
     const DeleteCard = (id) => {
         axios.delete(`http://localhost:3000/items/${id}`)

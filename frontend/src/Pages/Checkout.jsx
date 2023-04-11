@@ -13,7 +13,6 @@ const Checkout = () => {
             setCart(items)
         }
     }, [])
-    console.log(cart)
     return (
         <Layout currentPage="Checkout Page">
             {!cart.length == 0 ?
